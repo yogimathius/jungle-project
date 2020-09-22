@@ -1,6 +1,4 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require "capybara/rails"
-require "capybara/rspec"
 require "capybara/poltergeist" # Add this line to require poltergeist
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'

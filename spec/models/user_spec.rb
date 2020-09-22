@@ -40,18 +40,18 @@ RSpec.describe User, :type => :model do
 
   describe '.authenticate_with_credentials' do
     it 'should log the user in if the credentials are correct' do
-      @user = User.new(name: "John", email: "jimmy@gmail.com", password: "12345678", password_confirmation: "12345678")
-      @user.save!
+      user = User.new(name: "John", email: "jimmy@gmail.com", password: "12345678", password_confirmation: "12345678")
+      user.save!
       expect(User.authenticate_with_credentials("jimmy@gmail.com", "12345678")).to be_present
     end
     it 'should log the user in if the credentials are correct but caps are on' do
-      @user = User.new(name: "John", email: "jiMmy@gmail.com", password: "12345678", password_confirmation: "12345678")
-      @user.save!
+      user = User.new(name: "John", email: "jiMmy@gmail.com", password: "12345678", password_confirmation: "12345678")
+      user.save!
       expect(User.authenticate_with_credentials("jimmy@gmail.com", "12345678")).to be_present
     end
     it 'should log the user in if the credentials are correct but there are spaces after email' do
-      @user = User.new(name: "John", email: "jimmy@gmail.com", password: "12345678", password_confirmation: "12345678")
-      @user.save!
+      user = User.new(name: "John", email: "jimmy@gmail.com", password: "12345678", password_confirmation: "12345678")
+      user.save!
       expect(User.authenticate_with_credentials("jimmy@gmail.com  ", "12345678")).to be_present
     end
   end
